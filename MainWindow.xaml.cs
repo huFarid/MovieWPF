@@ -27,8 +27,45 @@ namespace MovieWPF
         public MainWindow()
         {
             InitializeComponent();
-            Thread.Sleep(3000);
+            Thread.Sleep(1000);
         }
 
+        private void RecTop_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            { this.DragMove(); }
+
+            if (e.MiddleButton == MouseButtonState.Pressed)
+            {
+                this.WindowState = this.WindowState == WindowState.Maximized
+                                      ? WindowState.Normal 
+                                      : WindowState.Maximized;
+            }
+                
+
+        }
+
+        private void BtnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+
+        }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+
+        }
+
+        private void BtnMoveLeft_Click(object sender, RoutedEventArgs e)
+        {
+            scrollViewrMovieList.LineLeft();   
+        }
+
+        private void BtnMoveRight_Click(object sender, RoutedEventArgs e)
+        {
+            scrollViewrMovieList.LineRight();
+
+        }
     }
 }

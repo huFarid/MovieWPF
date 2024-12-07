@@ -3,11 +3,90 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MovieWPF"
+        xmlns:local="clr-namespace:MovieWPF" WindowStyle="None" Background="LightBlue"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="700" Width="900" MinHeight="900" MinWidth="900">
+    <Window.Resources>
+        
+    </Window.Resources>
+    
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="{StaticResource BackgroundColorPrimary}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Column="0"></Rectangle>
+            <TextBlock Width="150" FontSize="20" Height="40" Grid.Column="1" Background="{StaticResource BackgroundColorSecondary}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       TextAlignment="Center" 
+                       Foreground="White" > Film Bank</TextBlock>
+            <Rectangle Name="RecTop" MouseDown="RecTop_MouseDown"  Grid.Column="2" Cursor="ScrollAll"></Rectangle>
+            <Button Name="BtnMinimize" Click="BtnMinimize_Click"  Grid.Column="3" Width="40" Height="40">-</Button>
+            <Button Name="BtnClose" Click="BtnClose_Click" Grid.Column="4" Width="40" Height="40">X</Button>
+            
+        </Grid>
+        <Label Grid.Row="1" Background="{StaticResource BackgroundColorPrimary}"></Label>
+
         
-        
+        <DockPanel Grid.Row="2">
+            <DockPanel.Resources>
+                <Style TargetType="Image">
+                    <Setter Property="Margin" Value="4"></Setter>
+                    
+                </Style>
+            </DockPanel.Resources>
+
+            <RepeatButton x:Name="BtnMoveLeft" Height="50" Width="50" DockPanel.Dock="Left" Click="BtnMoveLeft_Click">
+                <RepeatButton.Background>
+                    <ImageBrush ImageSource="/Content/Icons/keyboard-left-arrow-button.png" Stretch="Uniform" ></ImageBrush>
+                </RepeatButton.Background>
+            </RepeatButton>
+            <RepeatButton x:Name="BtnMoveRight" Height="50" Width="50" DockPanel.Dock="Right" Click="BtnMoveRight_Click">
+                <RepeatButton.Background>
+                    <ImageBrush ImageSource="/Content/Icons/keyboard-right-arrow-button.png" Stretch="Uniform" ></ImageBrush>
+                </RepeatButton.Background>
+            </RepeatButton>
+
+            <ScrollViewer Background="{StaticResource BackgroundColorSecondary}"
+              CanContentScroll="False"
+              SnapsToDevicePixels="True"
+              VerticalScrollBarVisibility="Disabled"
+              HorizontalScrollBarVisibility="Hidden"
+              x:Name="scrollViewrMovieList">
+
+                <StackPanel Orientation="Horizontal">
+              
+                    
+                    <Image Source="/Content/Images/2.jpg"></Image>
+                        <Image Source="/Content/Images/3.jpg"></Image>
+                        <Image Source="/Content/Images/4.jpg"></Image>
+                        <Image Source="/Content/Images/1.jpg"></Image>
+                        <Image Source="/Content/Images/2.jpg"></Image>
+                        <Image Source="/Content/Images/3.jpg"></Image>
+                        <Image Source="/Content/Images/4.jpg"></Image>
+                        
+                   
+               
+                </StackPanel>
+
+            </ScrollViewer>
+            
+         
+
+        </DockPanel>
+
+       
+
+
+
     </Grid>
 </Window>
