@@ -185,6 +185,10 @@
     <Resource Include="Content\Icons\settings-cogwheel-button.png" />
     <Resource Include="Content\Icons\user-shape.png" />
     <Resource Include="Content\Icons\users-social-symbol.png" />
+    <Resource Include="Content\Images\5.jpg" />
+    <Resource Include="Content\Images\6.jpg" />
+    <Resource Include="Content\Images\7.jpg" />
+    <Resource Include="Content\Images\8.jpg" />
     <Content Include="Models\MovieModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MovieModel.Context.cs</LastGenOutput>

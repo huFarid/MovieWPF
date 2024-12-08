@@ -20,9 +20,41 @@ namespace MovieWPF.UserControls
     /// </summary>
     public partial class UcImageWithBorder : UserControl
     {
+
+        #region Dependency Properties
+
+
+        public ImageSource Source
+        {
+            get { return (ImageSource)GetValue(ImageSourceProperty); }
+            set { SetValue(ImageSourceProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Source.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ImageSourceProperty =
+            DependencyProperty.Register("Source", typeof(ImageSource), typeof(UcImageWithBorder), new PropertyMetadata(null));
+
+
+
+
+
+        public object value
+        {
+            get { return (object)GetValue(valueProperty); }
+            set { SetValue(valueProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for value.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty valueProperty =
+            DependencyProperty.Register("value", typeof(object), typeof(UcImageWithBorder), new PropertyMetadata(null));
+
+
+
+        #endregion
         public UcImageWithBorder()
         {
             InitializeComponent();
+            this.DataContext = this;
         }
     }
 }

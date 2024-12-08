@@ -6,9 +6,11 @@
              xmlns:local="clr-namespace:MovieWPF.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="100">
-    <Border Style="{StaticResource BorderStyle}">
+    <Border  Tag="{Binding Path=Value}"  Style="{StaticResource BorderStyle}">
         <Border.Background>
-            <ImageBrush ImageSource="/Content/Images/1.jpg" Stretch="UniformToFill" ></ImageBrush>
+            <ImageBrush ImageSource="{Binding Path=Source}" Stretch="Fill" ></ImageBrush>
+            
         </Border.Background>
     </Border>
+   
 </UserControl>

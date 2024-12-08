@@ -67,12 +67,11 @@
         
         </Style>
         <Style TargetType="RepeatButton">
-            <Setter Property="BorderBrush" Value="{StaticResource BackgroundColorSecondary}"></Setter>
             <Setter Property="Opacity" Value="0.5"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="RepeatButton">
-                        <Border Background="{StaticResource BackgroundColorPrimary}">
+                        <Border Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"></ContentPresenter>
                             

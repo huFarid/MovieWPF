@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MovieWPF" WindowStyle="None" Background="LightBlue"
+        xmlns:uc ="clr-namespace:MovieWPF.UserControls"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="700" Width="900" MinHeight="900" MinWidth="900">
+        Title="MainWindow" Height="700" Width="900" MinHeight="500" MinWidth="500">
     <Window.Resources>
         
     </Window.Resources>
@@ -16,6 +17,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="150"></RowDefinition>
         </Grid.RowDefinitions>
+      
 
         <Grid Grid.Row="0" Background="{StaticResource BackgroundColorPrimary}">
             <Grid.ColumnDefinitions>
@@ -34,9 +36,100 @@
             <Button Name="BtnClose" Click="BtnClose_Click" Grid.Column="4" Width="40" Height="40">X</Button>
             
         </Grid>
-        <Label Grid.Row="1" Background="{StaticResource BackgroundColorPrimary}"></Label>
+
+
+        <Image Grid.Row="1" Stretch="UniformToFill" Source="/Content/Images/1.jpg" Opacity="0.4" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        </Image>
+        <Rectangle Grid.Row="1" Opacity="0.1" Fill="{StaticResource BackgroundColorPrimary}"></Rectangle>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <Image Source="/Content/Images/1.jpg"></Image>
+
+            </Grid>
+
+            <Grid Grid.Column="2">
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontFamily" Value="Palatino Linotype"></Setter>
+                        <Setter Property="FontSize" Value="20"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                        <Setter Property="Padding" Value="10 10 0 0"></Setter>
+                    </Style>
+                </Grid.Resources>
+
+               
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <DockPanel Grid.Row="0" >
+                    <TextBlock Text="Title: A Separation"></TextBlock>
+                </DockPanel>
+
+                <DockPanel Grid.Row="1" >
+                    <TextBlock Text="Director: Asghar Farhadi"></TextBlock>
+                </DockPanel>
+
+                <DockPanel Grid.Row="2" >
+                    <TextBlock Text="Release Year: 2011"></TextBlock>
+                </DockPanel>
+
+                <DockPanel Grid.Row="3" >
+                    <TextBlock Text="Genre: Drama"></TextBlock>
+                </DockPanel>
+
+                <DockPanel Grid.Row="4" >
+                    <TextBlock Text="Awards: Academy Award for Best Foreign Language Film"></TextBlock>
+                </DockPanel>
+
+             
+
+                <DockPanel Grid.Row="5" >
+                    <TextBlock Text="Main Characters: Nader, Simin, Termeh, Razieh"></TextBlock>
+                </DockPanel>
+
+                <DockPanel Grid.Row="6" >
+                    <TextBlock Text="Themes: Family, morality, justice, and societal expectations"></TextBlock>
+                </DockPanel>
+
+                <DockPanel Grid.Row="7" >
+                    <TextBlock Text="Language: Persian"></TextBlock>
+                </DockPanel>
+
+                <DockPanel Grid.Row="8" >
+                    <TextBlock Text="Runtime: 123 minutes"></TextBlock>
+                </DockPanel>
+
+             
+            </Grid>
+
+
+
+
+
+        </Grid>
+
 
         
+
+      
         <DockPanel Grid.Row="2">
             <DockPanel.Resources>
                 <Style TargetType="Image">
@@ -63,18 +156,16 @@
               HorizontalScrollBarVisibility="Hidden"
               x:Name="scrollViewrMovieList">
 
-                <StackPanel Orientation="Horizontal">
-              
-                    
-                    <Image Source="/Content/Images/2.jpg"></Image>
-                        <Image Source="/Content/Images/3.jpg"></Image>
-                        <Image Source="/Content/Images/4.jpg"></Image>
-                        <Image Source="/Content/Images/1.jpg"></Image>
-                        <Image Source="/Content/Images/2.jpg"></Image>
-                        <Image Source="/Content/Images/3.jpg"></Image>
-                        <Image Source="/Content/Images/4.jpg"></Image>
-                        
-                   
+                <StackPanel Name="SpMovieList"  Orientation="Horizontal">
+
+                    <uc:UcImageWithBorder Source="/Content/Images/1.jpg"/>
+                    <uc:UcImageWithBorder Source="/Content/Images/2.jpg"/>
+                    <uc:UcImageWithBorder Source="/Content/Images/3.jpg"/>
+                    <uc:UcImageWithBorder Source="/Content/Images/4.jpg"/>
+                    <uc:UcImageWithBorder Source="/Content/Images/5.jpg"/>
+                    <uc:UcImageWithBorder Source="/Content/Images/6.jpg"/>
+                    <uc:UcImageWithBorder Source="/Content/Images/7.jpg"/>
+                    <uc:UcImageWithBorder Source="/Content/Images/8.jpg"/>
                
                 </StackPanel>
 
