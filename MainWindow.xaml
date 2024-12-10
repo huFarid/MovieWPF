@@ -114,7 +114,31 @@
                 </DockPanel>
 
                 <DockPanel Grid.Row="8" >
-                    <TextBlock Text="Runtime: 123 minutes"></TextBlock>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="60"></ColumnDefinition>
+                            <ColumnDefinition Width="60"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="1">
+                            <Button  x:Name="btnAddMovie" Width="40" Height="40" BorderBrush="Black" Click="btnAddMovie_Click">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="Content/Icons/add-plus-button.png" Stretch="Uniform"></ImageBrush>
+                                </Button.Background>
+
+                            </Button>
+
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <Button x:Name="btnRemoveMovie" Width="40" Height="40" BorderBrush="Black" Click="btnRemoveMovie_Click">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="Content/Icons/Horizontal-line-remove-button.png" Stretch="Uniform"></ImageBrush>
+                                </Button.Background>
+                            </Button>
+                        </StackPanel>
+                       
+                    </Grid>
                 </DockPanel>
 
              

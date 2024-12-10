@@ -1,4 +1,5 @@
 ﻿using MovieWPF.UserControls;
+using MovieWPF.View;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core;
@@ -110,6 +111,26 @@ namespace MovieWPF
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnRemoveMovie_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAddMovie_Click(object sender, RoutedEventArgs e)
+        {
+            var vw = new vwMovieAddOrEdit()
+            {
+                Owner = this,
+
+            };
+            vw.ShowDialog();
         }
 
         //private void btnUpdateWidth_Click(object sender, RoutedEventArgs e)

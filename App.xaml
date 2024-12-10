@@ -25,6 +25,7 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 CornerRadius="50"
                                 Margin="{TemplateBinding Padding}"
+                                Background="{TemplateBinding Background}"
                                 Cursor="Hand"
                                 >
                             <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}"

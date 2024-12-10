@@ -71,6 +71,9 @@
     <Compile Include="UserControls\UcImageWithBorder.xaml.cs">
       <DependentUpon>UcImageWithBorder.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\vwMovieAddOrEdit.xaml.cs">
+      <DependentUpon>vwMovieAddOrEdit.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -84,6 +87,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserControls\UcImageWithBorder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\vwMovieAddOrEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,7 +164,6 @@
     <Folder Include="Resource\" />
     <Folder Include="Utility\" />
     <Folder Include="Validation\" />
-    <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
     <SplashScreen Include="Content\Images\main.jpg" />
