@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Movie_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Movie_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Directors">
           <Key>
             <PropertyRef Name="Id" />
@@ -40,7 +40,7 @@
           <Property Name="ImdbRate" Type="float" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
           <Property Name="Poster" Type="varchar" MaxLength="30" />
-          <Property Name="Cast" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Cast" Type="nvarchar(max)" />
           <Property Name="CreateDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -108,8 +108,7 @@
             <End Role="Movies" EntitySet="Movies" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Movie_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -152,7 +151,7 @@
           <Property Name="ImdbRate" Type="Double" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Poster" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Cast" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cast" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Directors" Relationship="Self.FK_Movies_Directors" FromRole="Movies" ToRole="Directors" />
           <NavigationProperty Name="MovieGenres" Relationship="Self.FK_MovieGenres_Movies" FromRole="Movies" ToRole="MovieGenres" />

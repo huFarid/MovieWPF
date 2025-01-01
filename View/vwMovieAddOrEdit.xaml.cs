@@ -32,6 +32,7 @@ namespace MovieWPF.View
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
+
             this.Close();
 
         }
@@ -39,8 +40,9 @@ namespace MovieWPF.View
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             
-            
-            var mov = movies;
+            movies.CreateDate = DateTime.Now;
+            dataBase.Movies.Add(movies);
+            dataBase.SaveChanges();
             this.Close();
         }
 
