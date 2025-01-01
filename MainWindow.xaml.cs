@@ -128,9 +128,9 @@ namespace MovieWPF
             var vw = new vwMovieAddOrEdit()
             {
                 Owner = this,
-
             };
             vw.ShowDialog();
+
         }
 
         //private void btnUpdateWidth_Click(object sender, RoutedEventArgs e)

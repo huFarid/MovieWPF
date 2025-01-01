@@ -22,6 +22,8 @@ namespace MovieWPF.View
     {
 
         public Movies movies = new Movies();
+        private Movie_DBEntities dataBase = new Movie_DBEntities();
+        
         public vwMovieAddOrEdit()
         {
             InitializeComponent();
@@ -36,7 +38,17 @@ namespace MovieWPF.View
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
+            
+            
+            var mov = movies;
             this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            CboDirector.ItemsSource = dataBase.Directors.ToList();
+            CboDirector.SelectedIndex = 0;
+
         }
     }
 }

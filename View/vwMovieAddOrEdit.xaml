@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MovieWPF.View"
         mc:Ignorable="d" WindowStartupLocation="CenterOwner" WindowStyle="None" ShowInTaskbar="False"
-        Title="vwMovieAddOrEdit" Height="400" Width="300">
+        Title="vwMovieAddOrEdit" Height="400" Width="300" Loaded="Window_Loaded">
     <Grid>
         <DockPanel>
             <!-- Bottom buttons -->
