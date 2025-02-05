@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MovieWPF.View"
         mc:Ignorable="d" WindowStartupLocation="CenterOwner" WindowStyle="None" ShowInTaskbar="False"
-        Title="vwMovieAddOrEdit" Height="400" Width="300" Loaded="Window_Loaded">
+        Title="vwMovieAddOrEdit" Height="500" Width="600" Loaded="Window_Loaded">
     <Grid>
         <DockPanel>
             <!-- Bottom buttons -->
@@ -25,6 +25,10 @@
             </Grid>
 
             <!-- Main content -->
+
+          
+            
+            
             <StackPanel Margin="10">
                 <StackPanel.Resources>
                     <Style TargetType="DockPanel">
@@ -37,64 +41,101 @@
                     </Style>
                 </StackPanel.Resources>
 
-                <!-- Title -->
-                <DockPanel>
-                    <Label DockPanel.Dock="Left" Content="Title:" />
-                    <TextBox Name="TxtTitle" Text="{Binding Title}" />
-                </DockPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
-                <!-- Description -->
-                <DockPanel>
-                    <Label DockPanel.Dock="Left" Content="Description:" />
-                    <TextBox Name="TxtTagline" Text="{Binding Tagline}" />
-                </DockPanel>
+                    
+                        <StackPanel Grid.Column="0">
+                            <!-- Title -->
+                            <DockPanel>
+                                <Label DockPanel.Dock="Left" Content="Title:" />
+                                <TextBox Name="TxtTitle" Text="{Binding Title}" />
+                            </DockPanel>
 
-                <!-- Director -->
-                <DockPanel>
-                    <Label DockPanel.Dock="Left" Content="Director:" />
-                    <ComboBox Name="CboDirector" SelectedValue="{Binding DirectorId}"
-                          DisplayMemberPath="Name" SelectedValuePath="Id" />
-                </DockPanel>
+                        
 
-                <!-- Year -->
-                <DockPanel>
-                    <Label DockPanel.Dock="Left" Content="Year:" />
-                    <TextBox Name="TxtYear" Text="{Binding Year}"  />
-                </DockPanel>
+                            <!-- Director -->
+                            <DockPanel>
+                                <Label DockPanel.Dock="Left" Content="Director:" />
+                                <ComboBox Name="CboDirector" SelectedValue="{Binding DirectorId}"
+                                   DisplayMemberPath="Name" SelectedValuePath="Id" />
+                            </DockPanel>
 
-                <!-- IMDB score -->
-                <DockPanel>
-                    <Label DockPanel.Dock="Left" Content="IMDB Score:" />
-                    <TextBox Name="TxtImdbRate" Text="{Binding ImdbRate}"  />
-                </DockPanel>
+                        <!-- Cast -->
+                        <DockPanel>
+                            <Label DockPanel.Dock="Left" Content="Cast:" />
+                            <TextBox Name="TxtCast" AcceptsReturn="True" Text="{Binding Cast}" Height="155" 
+/>
+                        </DockPanel>
 
-                <!-- Image -->
-                <DockPanel>
-                    <Label DockPanel.Dock="Left" Content="Image:" />
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Name="ImgPoster" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" 
-                            Height="150" Margin="0,0,0,5" />
-                        <Label Name="TxtPosterName" Content="{Binding Poster}" Grid.Column="0" Grid.Row="1" 
-                           BorderThickness="1" BorderBrush="Gray" HorizontalContentAlignment="Center" />
-                        <Button Name="BtnPoster" Grid.Column="1" Grid.Row="1" Content="Select" 
-                            Background="LightGray" Margin="5,0,0,0" />
-                    </Grid>
-                </DockPanel>
 
-                <!-- Cast -->
-                <DockPanel>
-                    <Label DockPanel.Dock="Left" Content="Cast:" />
-                    <TextBox Name="TxtCast" AcceptsReturn="True" Text="{Binding Cast}" Height="100" 
-                         />
-                </DockPanel>
+
+                    </StackPanel>
+
+
+
+                    <StackPanel Grid.Column="1">
+                        <!-- Year -->
+                        <DockPanel>
+                            <Label DockPanel.Dock="Left" Content="Year:" />
+                            <TextBox Name="TxtYear" Text="{Binding Year}"  />
+                        </DockPanel>
+
+                        <!-- IMDB score -->
+                        <DockPanel>
+                            <Label DockPanel.Dock="Left" Content="IMDB Score:" />
+                            <TextBox Name="TxtImdbRate" Text="{Binding ImdbRate}"  />
+                        </DockPanel>
+
+
+                        <!-- Image -->
+                        <DockPanel>
+                            <Label DockPanel.Dock="Left" Content="Image:" />
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Name="ImgPoster" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" 
+                                  Height="150" Margin="0,0,0,5" />
+                                <Label Name="TxtPosterName" Content="{Binding Poster}" Grid.Column="0" Grid.Row="1" 
+                                BorderThickness="1" Width="90" HorizontalAlignment="Left"  BorderBrush="Gray" HorizontalContentAlignment="Center" />
+                                <Button Name="BtnPoster" Grid.Column="1" Grid.Row="1" Content="Select" 
+                                   Background="LightGray" Margin="5,0,0,0" />
+                            </Grid>
+                        </DockPanel>
+
+
+
+                    </StackPanel>
+
+                
+
+
+
+
+
+
+                </Grid>
+
+
+
+
+
+           
+
+              
+
+             
+
+            
 
                 <!-- Long Description -->
                 <DockPanel>

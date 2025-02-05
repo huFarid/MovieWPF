@@ -32,8 +32,8 @@
                        TextAlignment="Center" 
                        Foreground="White" > Film Bank</TextBlock>
             <Rectangle Name="RecTop" MouseDown="RecTop_MouseDown"  Grid.Column="2" Cursor="ScrollAll"></Rectangle>
-            <Button Name="BtnMinimize" Click="BtnMinimize_Click"  Grid.Column="3" Width="40" Height="40">-</Button>
-            <Button Name="BtnClose" Click="BtnClose_Click" Grid.Column="4" Width="40" Height="40">X</Button>
+            <Button Name="BtnMinimize" Click="BtnMinimize_Click"  Grid.Column="3" Width="40" Height="40" Style="{StaticResource btnCircleStyle}">-</Button>
+            <Button Name="BtnClose" Click="BtnClose_Click" Grid.Column="4" Width="40" Height="40" Style="{StaticResource btnCircleStyle}">X</Button>
             
         </Grid>
 
@@ -122,7 +122,7 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="1">
-                            <Button  x:Name="btnAddMovie" Width="40" Height="40" BorderBrush="Black" Click="btnAddMovie_Click">
+                            <Button  x:Name="btnAddMovie" Width="40" Height="40" BorderBrush="Black" Click="btnAddMovie_Click" Style="{StaticResource btnCircleStyle}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="Content/Icons/add-plus-button.png" Stretch="Uniform"></ImageBrush>
                                 </Button.Background>
@@ -131,7 +131,7 @@
 
                         </StackPanel>
                         <StackPanel Grid.Column="2">
-                            <Button x:Name="btnRemoveMovie" Width="40" Height="40" BorderBrush="Black" Click="btnRemoveMovie_Click">
+                            <Button x:Name="btnRemoveMovie" Width="40" Height="40" BorderBrush="Black" Click="btnRemoveMovie_Click" Style="{StaticResource btnCircleStyle}">
                                 <Button.Background>
                                     <ImageBrush ImageSource="Content/Icons/Horizontal-line-remove-button.png" Stretch="Uniform"></ImageBrush>
                                 </Button.Background>

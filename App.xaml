@@ -9,7 +9,7 @@
 
 
 
-        <Style TargetType="Button">
+        <Style x:Key="btnCircleStyle" TargetType="Button">
             <Setter Property="BorderBrush" Value="White"></Setter>
             <Setter Property="BorderThickness" Value="1"></Setter>
             <Setter Property="FontSize" Value="13"></Setter>
