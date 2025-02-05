@@ -15,7 +15,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button Name="BtnSave" Click="BtnSave_Click"  Background="Green" Foreground="White" Content="Save" 
-                     Margin="5">
+                     Margin="5" >
                     
                 </Button>
                 <Button Name="BtnCancel" Click="BtnCancel_Click"  Grid.Column="1" Background="LightGray" Foreground="Black" 
@@ -108,7 +108,7 @@
                                 <Label Name="TxtPosterName" Content="{Binding Poster}" Grid.Column="0" Grid.Row="1" 
                                 BorderThickness="1" Width="90" HorizontalAlignment="Left"  BorderBrush="Gray" HorizontalContentAlignment="Center" />
                                 <Button Name="BtnPoster" Grid.Column="1" Grid.Row="1" Content="Select" 
-                                   Background="LightGray" Margin="5,0,0,0" />
+                                   Background="LightGray" Margin="5,0,0,0" Click="BtnPoster_Click" />
                             </Grid>
                         </DockPanel>
 

@@ -1,7 +1,9 @@
-﻿using MovieWPF.Models;
+﻿using Microsoft.Win32;
+using MovieWPF.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -50,6 +52,35 @@ namespace MovieWPF.View
         {
             CboDirector.ItemsSource = dataBase.Directors.ToList();
             CboDirector.SelectedIndex = 0;
+
+        }
+
+        private void BtnPoster_Click(object sender, RoutedEventArgs e)
+        {
+
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Title = "Select an Image",
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif",
+                Multiselect = false 
+            };
+
+            if (openFileDialog.ShowDialog() == true) { 
+             string filePath = openFileDialog.FileName;
+
+                try
+                {
+                    ImgPoster.Source = new BitmapImage(new Uri(filePath));
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show($"{exception.Message}", "Error",MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+            }
+
+
+            
 
         }
     }
